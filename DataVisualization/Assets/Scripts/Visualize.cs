@@ -1,22 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Visualize : MonoBehaviour {
+    public Text time;
     int index = 0;
 
     // Use this for initialization
     void Start () {
         var data = GameObject.Find("CSV").GetComponent<CSVData>().getRowData(0);
 
-        setAllPlanets(0);
+        setVisualize(0);
     }
 	
 	// Update is called once per frame
 	void Update () {
         if(Input.GetKeyDown(KeyCode.UpArrow))
-            setAllPlanets(index++);
+            setVisualize(index++);
 
     }
 
@@ -31,6 +33,19 @@ public class Visualize : MonoBehaviour {
         orthogonal.z = r * Mathf.Sin(dec * Mathf.Deg2Rad);
 
         return orthogonal;
+    }
+
+    private void setVisualize(int index)
+    {
+        setUI(index);
+        setAllPlanets(index);
+    }
+
+    private void setUI(int index)
+    {
+        var data = GameObject.Find("CSV").GetComponent<CSVData>().getRowData(index);
+        string[] olgTime = data["earthquake.time"].Replace('-', '/').Split('T');
+        time.text = "Time : " + olgTime[0] + " " + olgTime[1]; 
     }
 
     private void setAllPlanets(int index)
