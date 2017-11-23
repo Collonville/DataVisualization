@@ -7,6 +7,7 @@ using UnityEngine;
 public class Visualize : MonoBehaviour {
     public Text time;
     public Text magText;
+    public Slider slider;
     int index = 0;
 
     // Use this for initialization
@@ -21,6 +22,11 @@ public class Visualize : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.UpArrow))
             setVisualize(index++);
 
+    }
+
+    public void setsetVisualizeFromSlider()
+    {
+        setVisualize((int)slider.value);
     }
 
     //極座標系から直交座標系へ変換
