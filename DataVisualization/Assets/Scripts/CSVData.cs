@@ -7,13 +7,18 @@ using UnityEngine;
 public class CSVData : MonoBehaviour {
     private const string CSV_PATH = "SolarSystemAndEarthquakes";
 
-    public Dictionary<int, Dictionary<string, string>> data;
+    private Dictionary<int, Dictionary<string, string>> data;
     private List<string> columnName;
+
+    void Awake()
+    {
+        columnName = getColumnName();
+        data = getAllData(columnName);
+    }
 
     // Use this for initialization
     void Start () {
-        columnName = getColumnName();
-        data = getAllData(columnName);
+       
 
         /*
         for(int i = 0; i < data.Keys.Count; i++)
@@ -65,5 +70,10 @@ public class CSVData : MonoBehaviour {
         reader.Close();
 
         return new List<string>(firstLine);
+    }
+
+    public Dictionary<string, string> getRowData(int index)
+    {
+        return data[index];
     }
 }
