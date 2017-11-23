@@ -47,11 +47,11 @@ Temporary Items
 .apdisk
 
 # Unity
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
+Library/
+Temp/
+Obj/
+Build/
+Builds/
 /Assets/AssetStoreTools*
 /TPS_cache/*
 
@@ -86,4 +86,4 @@ sysinfo.txt
 *.unitypackage
 
 #Assets
-/SolarSystem
+DataVisualization/Assets/SolarSystem
