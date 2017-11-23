@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Visualize : MonoBehaviour {
     public Text time;
+    public Text magText;
     int index = 0;
 
     // Use this for initialization
@@ -45,7 +46,11 @@ public class Visualize : MonoBehaviour {
     {
         var data = GameObject.Find("CSV").GetComponent<CSVData>().getRowData(index);
         string[] olgTime = data["earthquake.time"].Replace('-', '/').Split('T');
-        time.text = "Time : " + olgTime[0] + " " + olgTime[1]; 
+        time.text = "Time : " + olgTime[0] + " " + olgTime[1];
+
+        magText.text = data["earthquake.mag"];
+        Renderer magBack = GameObject.Find("MagBack").GetComponent<Renderer>();
+        magBack.material.color = Color.HSVToRGB(Mathf.Clamp01(float.Parse(data["earthquake.mag"]) * 0.1f + 0.1f), 1.0f, 0.6f);
     }
 
     private void setAllPlanets(int index)
