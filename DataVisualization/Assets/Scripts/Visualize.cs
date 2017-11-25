@@ -7,10 +7,11 @@ using UnityEngine;
 
 public class Visualize : MonoBehaviour {
     public Text time;
+    public Text place;
     public Text magText;
     public Slider slider;
 
-    public Text detailText1, detailText2;
+    public Text detailText1, detailText2, moonText;
     int index = 0;
 
     private List<Vector3> defaultPotision = new List<Vector3>();
@@ -137,11 +138,27 @@ public class Visualize : MonoBehaviour {
     private void setUI()
     {
         string[] olgTime = data["earthquake.time"].Replace('-', '/').Split('T');
-        time.text = "Time : " + olgTime[0] + " " + olgTime[1];
+        time.text = olgTime[0] + " " + olgTime[1];
+
+        place.text = data["earthquake.place"];
 
         magText.text = "M" + data["earthquake.mag"];
         Renderer magBack = GameObject.Find("MagBack").GetComponent<Renderer>();
         magBack.material.color = Color.HSVToRGB(Mathf.Clamp01(float.Parse(data["earthquake.mag"]) * 0.1f + 0.1f), 1.0f, 0.6f);
+
+        StringBuilder strbui = new StringBuilder();
+        strbui.AppendLine("Earthquake Detail");
+        strbui.AppendLine("Latitude : " + data["earthquake.latitude"]);
+        strbui.AppendLine("Longitude : " + data["earthquake.longitude"]);
+        strbui.AppendLine("");
+        strbui.AppendLine("Moon Detail");
+        strbui.AppendLine("Dynamic : " + data["MoonPhase.dynamic"]);
+        strbui.AppendLine("Value : " + data["MoonPhase.value"]);
+        strbui.AppendLine("Total : " + data["MoonPhase.total"]);
+        strbui.AppendLine("Percent : " + data["MoonPhase.percent"]);
+        strbui.AppendLine("Illumination : " + data["MoonPhase.illumination"]);
+
+        moonText.text = strbui.ToString();
     }
 
     private void setAllPlanets()
