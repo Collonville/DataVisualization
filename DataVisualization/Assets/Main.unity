@@ -201,7 +201,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 67331572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -342, y: -273, z: 0}
+  m_LocalPosition: {x: -342, y: -291.3, z: 0.0000020644216}
   m_LocalScale: {x: 5, y: 5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 95276435}
@@ -349,6 +349,7 @@ RectTransform:
   - {fileID: 161477594}
   - {fileID: 822333791}
   - {fileID: 465669707}
+  - {fileID: 623303919}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -422,7 +423,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 161477593}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -273.7, z: -0}
+  m_LocalPosition: {x: 0, y: -292, z: 0}
   m_LocalScale: {x: 3, y: 339.12, z: 3}
   m_Children: []
   m_Father: {fileID: 95276435}
@@ -490,9 +491,7 @@ GameObject:
   - component: {fileID: 219737634}
   - component: {fileID: 219737639}
   - component: {fileID: 219737638}
-  - component: {fileID: 219737637}
   - component: {fileID: 219737636}
-  - component: {fileID: 219737635}
   - component: {fileID: 219737640}
   m_Layer: 0
   m_Name: Neptune
@@ -514,26 +513,6 @@ Transform:
   m_Father: {fileID: 1581370077}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &219737635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11414958, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 219737633}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b94759719464c42b18771542a4a419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerMass: {fileID: 493821612}
-  revealingLight: {fileID: 0}
-  rotationAroundPlanetSpeed: 0.8
-  rotationAroundSunDays: 89666
-  defaultEarthYear: 365.25
-  satelliteOrbitDistance: 1.2
-  planetSunDistance: 100
-  planetSpeedRotation: 1
 --- !u!135 &219737636
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -547,19 +526,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9880269
   m_Center: {x: -0.00000017881393, y: 0, z: -0.00000020861626}
---- !u!114 &219737637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400902, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 219737633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae2d264c358d54db6e309262d20b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetSpeedRotation: 1
 --- !u!23 &219737638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -973,7 +939,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 465669706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 45913857}
@@ -983,7 +949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34, y: 258}
+  m_AnchoredPosition: {x: -34, y: 264.4}
   m_SizeDelta: {x: 720.5, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &465669708
@@ -1073,8 +1039,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 15.25, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_Children:
-  - {fileID: 1834846568}
+  m_Children: []
   m_Father: {fileID: 1581370077}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1228,9 +1193,7 @@ GameObject:
   - component: {fileID: 517090248}
   - component: {fileID: 517090253}
   - component: {fileID: 517090252}
-  - component: {fileID: 517090251}
   - component: {fileID: 517090250}
-  - component: {fileID: 517090249}
   - component: {fileID: 517090254}
   m_Layer: 0
   m_Name: Mars
@@ -1252,26 +1215,6 @@ Transform:
   m_Father: {fileID: 1581370077}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &517090249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11435484, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 517090247}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b94759719464c42b18771542a4a419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerMass: {fileID: 493821612}
-  revealingLight: {fileID: 0}
-  rotationAroundPlanetSpeed: 0.8
-  rotationAroundSunDays: 686.971
-  defaultEarthYear: 365.25
-  satelliteOrbitDistance: 1.2
-  planetSunDistance: 100
-  planetSpeedRotation: 1
 --- !u!135 &517090250
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1285,19 +1228,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9880269
   m_Center: {x: -0.00000017881393, y: 0, z: -0.00000020861626}
---- !u!114 &517090251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11442530, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 517090247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae2d264c358d54db6e309262d20b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetSpeedRotation: 1
 --- !u!23 &517090252
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1435,9 +1365,7 @@ GameObject:
   - component: {fileID: 520478705}
   - component: {fileID: 520478710}
   - component: {fileID: 520478709}
-  - component: {fileID: 520478708}
   - component: {fileID: 520478707}
-  - component: {fileID: 520478706}
   - component: {fileID: 520478711}
   m_Layer: 0
   m_Name: Uranus
@@ -1459,26 +1387,6 @@ Transform:
   m_Father: {fileID: 1581370077}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &520478706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11490012, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 520478704}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b94759719464c42b18771542a4a419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerMass: {fileID: 493821612}
-  revealingLight: {fileID: 0}
-  rotationAroundPlanetSpeed: 0.8
-  rotationAroundSunDays: 30688.5
-  defaultEarthYear: 365.25
-  satelliteOrbitDistance: 1.2
-  planetSunDistance: 100
-  planetSpeedRotation: 1
 --- !u!135 &520478707
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1492,19 +1400,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9880269
   m_Center: {x: -0.00000017881393, y: 0, z: -0.00000020861626}
---- !u!114 &520478708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11436892, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 520478704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae2d264c358d54db6e309262d20b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetSpeedRotation: 1
 --- !u!23 &520478709
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1738,7 +1633,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 618011362}
-  - component: {fileID: 618011363}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -1761,26 +1655,75 @@ Transform:
   m_Father: {fileID: 1581370077}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &618011363
+--- !u!1 &623303918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 623303919}
+  - component: {fileID: 623303921}
+  - component: {fileID: 623303920}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &623303919
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623303918}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 0.2, y: 0.23, z: 1}
+  m_Children:
+  - {fileID: 658259396}
+  m_Father: {fileID: 95276435}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -307, y: 180.4}
+  m_SizeDelta: {x: -0.65005493, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &623303920
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11477662, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 618011361}
-  m_Enabled: 0
+  m_GameObject: {fileID: 623303918}
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b94759719464c42b18771542a4a419, type: 3}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerMass: {fileID: 493821612}
-  revealingLight: {fileID: 0}
-  rotationAroundPlanetSpeed: 1
-  rotationAroundSunDays: 365.25
-  defaultEarthYear: 365.25
-  satelliteOrbitDistance: 1.8
-  planetSunDistance: 100
-  planetSpeedRotation: 1
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4852941, g: 0.47102076, b: 0.47102076, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &623303921
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623303918}
 --- !u!1 &623350628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,6 +1792,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 623350628}
+--- !u!1 &658259395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 658259396}
+  - component: {fileID: 658259398}
+  - component: {fileID: 658259397}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &658259396
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 658259395}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 623303919}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 763.08, y: 560.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &658259397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 658259395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 59
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 59
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &658259398
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 658259395}
 --- !u!1 &713891694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,9 +1876,7 @@ GameObject:
   - component: {fileID: 713891695}
   - component: {fileID: 713891700}
   - component: {fileID: 713891699}
-  - component: {fileID: 713891698}
   - component: {fileID: 713891697}
-  - component: {fileID: 713891696}
   - component: {fileID: 713891701}
   m_Layer: 0
   m_Name: Pluto
@@ -1883,26 +1898,6 @@ Transform:
   m_Father: {fileID: 1581370077}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &713891696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11494294, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 713891694}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b94759719464c42b18771542a4a419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerMass: {fileID: 493821612}
-  revealingLight: {fileID: 0}
-  rotationAroundPlanetSpeed: 0.8
-  rotationAroundSunDays: 90581
-  defaultEarthYear: 365.25
-  satelliteOrbitDistance: 1.2
-  planetSunDistance: 100
-  planetSpeedRotation: 1
 --- !u!135 &713891697
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1916,19 +1911,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9880269
   m_Center: {x: -0.00000017881393, y: 0, z: -0.00000020861626}
---- !u!114 &713891698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11406096, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 713891694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae2d264c358d54db6e309262d20b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetSpeedRotation: 1
 --- !u!23 &713891699
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2066,7 +2048,6 @@ GameObject:
   - component: {fileID: 753066203}
   - component: {fileID: 753066209}
   - component: {fileID: 753066208}
-  - component: {fileID: 753066207}
   - component: {fileID: 753066206}
   - component: {fileID: 753066205}
   - component: {fileID: 753066204}
@@ -2202,19 +2183,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9979979
   m_Center: {x: 0, y: 0.0000004768371, z: 0}
---- !u!114 &753066207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11448258, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 753066202}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae2d264c358d54db6e309262d20b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetSpeedRotation: 1
 --- !u!23 &753066208
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2266,9 +2234,7 @@ GameObject:
   - component: {fileID: 805915980}
   - component: {fileID: 805915985}
   - component: {fileID: 805915984}
-  - component: {fileID: 805915983}
   - component: {fileID: 805915982}
-  - component: {fileID: 805915981}
   - component: {fileID: 805915986}
   m_Layer: 0
   m_Name: Jupiter
@@ -2290,26 +2256,6 @@ Transform:
   m_Father: {fileID: 1581370077}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &805915981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11420636, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805915979}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b94759719464c42b18771542a4a419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerMass: {fileID: 493821612}
-  revealingLight: {fileID: 0}
-  rotationAroundPlanetSpeed: 0.8
-  rotationAroundSunDays: 4332.59
-  defaultEarthYear: 365.25
-  satelliteOrbitDistance: 1.2
-  planetSunDistance: 100
-  planetSpeedRotation: 1
 --- !u!135 &805915982
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2323,19 +2269,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9880269
   m_Center: {x: -0.00000017881393, y: 0, z: -0.00000020861626}
---- !u!114 &805915983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11456486, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805915979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae2d264c358d54db6e309262d20b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetSpeedRotation: 1
 --- !u!23 &805915984
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2866,9 +2799,7 @@ GameObject:
   - component: {fileID: 1303732893}
   - component: {fileID: 1303732898}
   - component: {fileID: 1303732897}
-  - component: {fileID: 1303732896}
   - component: {fileID: 1303732895}
-  - component: {fileID: 1303732894}
   - component: {fileID: 1303732899}
   m_Layer: 0
   m_Name: Mercury
@@ -2890,26 +2821,6 @@ Transform:
   m_Father: {fileID: 1581370077}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1303732894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11420854, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1303732892}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b94759719464c42b18771542a4a419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerMass: {fileID: 493821612}
-  revealingLight: {fileID: 0}
-  rotationAroundPlanetSpeed: 0.8
-  rotationAroundSunDays: 87.969
-  defaultEarthYear: 365.25
-  satelliteOrbitDistance: 1.2
-  planetSunDistance: 100
-  planetSpeedRotation: 1
 --- !u!135 &1303732895
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2923,19 +2834,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9904158
   m_Center: {x: -0.00000023841858, y: -0.000000029802322, z: -0.00000020861626}
---- !u!114 &1303732896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11446718, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1303732892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae2d264c358d54db6e309262d20b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetSpeedRotation: 1
 --- !u!23 &1303732897
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3281,7 +3179,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1511685833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 342, y: -273.0001, z: 0}
+  m_LocalPosition: {x: 342, y: -291.30008, z: 0.0000020644216}
   m_LocalScale: {x: 5, y: 5, z: 0.100025974}
   m_Children: []
   m_Father: {fileID: 95276435}
@@ -3348,9 +3246,7 @@ GameObject:
   - component: {fileID: 1540523341}
   - component: {fileID: 1540523346}
   - component: {fileID: 1540523345}
-  - component: {fileID: 1540523344}
   - component: {fileID: 1540523343}
-  - component: {fileID: 1540523342}
   - component: {fileID: 1540523347}
   m_Layer: 0
   m_Name: Saturn
@@ -3374,26 +3270,6 @@ Transform:
   m_Father: {fileID: 1581370077}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1540523342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11419630, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1540523340}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b94759719464c42b18771542a4a419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerMass: {fileID: 493821612}
-  revealingLight: {fileID: 0}
-  rotationAroundPlanetSpeed: 0.8
-  rotationAroundSunDays: 10759.22
-  defaultEarthYear: 365.25
-  satelliteOrbitDistance: 1.2
-  planetSunDistance: 100
-  planetSpeedRotation: 1
 --- !u!135 &1540523343
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3407,19 +3283,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9880269
   m_Center: {x: -0.00000017881393, y: 0, z: -0.00000020861626}
---- !u!114 &1540523344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11407166, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1540523340}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae2d264c358d54db6e309262d20b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetSpeedRotation: 1
 --- !u!23 &1540523345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3584,7 +3447,7 @@ Transform:
   - {fileID: 520478705}
   - {fileID: 219737634}
   - {fileID: 713891695}
-  - {fileID: 2073488252}
+  - {fileID: 1759093350}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3664,6 +3527,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1759093349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1759093350}
+  - component: {fileID: 1759093351}
+  m_Layer: 0
+  m_Name: polar_alpha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1759093350
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1759093349}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2}
+  m_Children: []
+  m_Father: {fileID: 1581370077}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!212 &1759093351
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1759093349}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: cae3a6463cb045f4b8ac158fb2cfc109, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 30.000002, y: 28.82}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &1800485328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3674,10 +3608,7 @@ GameObject:
   - component: {fileID: 1800485329}
   - component: {fileID: 1800485335}
   - component: {fileID: 1800485334}
-  - component: {fileID: 1800485333}
-  - component: {fileID: 1800485332}
   - component: {fileID: 1800485331}
-  - component: {fileID: 1800485330}
   - component: {fileID: 1800485336}
   m_Layer: 0
   m_Name: Venus
@@ -3699,26 +3630,6 @@ Transform:
   m_Father: {fileID: 1581370077}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1800485330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11492490, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1800485328}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b94759719464c42b18771542a4a419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerMass: {fileID: 493821612}
-  revealingLight: {fileID: 0}
-  rotationAroundPlanetSpeed: 0.8
-  rotationAroundSunDays: 224.701
-  defaultEarthYear: 365.25
-  satelliteOrbitDistance: 1.2
-  planetSunDistance: 100
-  planetSpeedRotation: 1
 --- !u!135 &1800485331
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3732,31 +3643,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9904158
   m_Center: {x: -0.00000023841858, y: -0.000000029802322, z: -0.00000020861626}
---- !u!114 &1800485332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11468916, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1800485328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae2d264c358d54db6e309262d20b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planetSpeedRotation: -1
---- !u!122 &1800485333
-Halo:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 12266312, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1800485328}
-  m_Enabled: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4281054207
-  m_Size: 1.1
 --- !u!23 &1800485334
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3884,177 +3770,3 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!1 &1834846567
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 191916, guid: 684607a10eed8fd4ca28c636950fa092, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1834846568}
-  - component: {fileID: 1834846571}
-  - component: {fileID: 1834846570}
-  - component: {fileID: 1834846569}
-  m_Layer: 0
-  m_Name: SunAdditive
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1834846568
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 423314, guid: 684607a10eed8fd4ca28c636950fa092, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1834846567}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.98540336, y: 0.98540336, z: 0.98540336}
-  m_Children: []
-  m_Father: {fileID: 493821612}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1834846569
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9540152, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1834846567}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2f774b0d596404a4f8e2e9da70295465, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!23 &1834846570
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2394856, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1834846567}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 45b6870121571b6429965ab2e8c26ff8, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1834846571
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3323144, guid: 684607a10eed8fd4ca28c636950fa092,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1834846567}
-  m_Mesh: {fileID: 4300008, guid: 090effb2043c44147816ff615a828a1d, type: 3}
---- !u!1 &2073488248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2073488252}
-  - component: {fileID: 2073488251}
-  - component: {fileID: 2073488250}
-  - component: {fileID: 2073488249}
-  m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &2073488249
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2073488248}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: cad7947e88767f14fa33e6b34912feaa, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!64 &2073488250
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2073488248}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &2073488251
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2073488248}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2073488252
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2073488248}
-  m_LocalRotation: {x: 0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: -8.2, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 8}
-  m_Children: []
-  m_Father: {fileID: 1581370077}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}

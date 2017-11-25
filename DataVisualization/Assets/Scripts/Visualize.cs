@@ -30,7 +30,31 @@ public class Visualize : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        SelectData();
+        SetPlanetDetail();
+    }
+
+    private void SetPlanetDetail()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            // クリックしたスクリーン座標をrayに変換
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            // Rayの当たったオブジェクトの情報を格納する
+            RaycastHit hit = new RaycastHit();
+            // オブジェクトにrayが当たった時
+            if (Physics.Raycast(ray, out hit, 1000))
+            {
+                // rayが当たったオブジェクトの名前を取得
+                string objectName = hit.collider.gameObject.name;
+                Debug.Log(objectName);
+            }
+        }
+    }
+
+    private void SelectData()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
             setVisualize(index++);
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -39,8 +63,6 @@ public class Visualize : MonoBehaviour {
                 index = 0;
             setVisualize(index);
         }
-            
-
     }
 
     public void setsetVisualizeFromSlider()
