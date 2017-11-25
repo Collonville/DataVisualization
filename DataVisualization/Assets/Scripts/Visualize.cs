@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -8,9 +9,12 @@ public class Visualize : MonoBehaviour {
     public Text time;
     public Text magText;
     public Slider slider;
+
+    public Text detailText;
     int index = 0;
 
     private List<Vector3> defaultPotision = new List<Vector3>();
+    private Dictionary<string, string> data;
 
     // Use this for initialization
     void Start () {
@@ -38,16 +42,26 @@ public class Visualize : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // クリックしたスクリーン座標をrayに変換
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            // Rayの当たったオブジェクトの情報を格納する
             RaycastHit hit = new RaycastHit();
-            // オブジェクトにrayが当たった時
+
             if (Physics.Raycast(ray, out hit, 1000))
             {
-                // rayが当たったオブジェクトの名前を取得
                 string objectName = hit.collider.gameObject.name;
-                Debug.Log(objectName);
+                StringBuilder strbui = new StringBuilder();
+
+                strbui.AppendLine(objectName);
+                strbui.AppendLine("Longitude : " + data[objectName + ".longitude"]);
+                strbui.AppendLine("Latitude  : " + data[objectName + ".latitude"]);
+                strbui.AppendLine("Rectascension : " + data[objectName + ".rectascension"]);
+                strbui.AppendLine("Declination : " + data[objectName + ".declination"]);
+                strbui.AppendLine("Azimuth : " + data[objectName + ".azimuth"]);
+                strbui.AppendLine("Height  : " + data[objectName + ".height"]);
+                strbui.AppendLine("Speed   : " + data[objectName + ".speed"]);
+                strbui.AppendLine("House   : " + data[objectName + ".house"]);
+                strbui.AppendLine("HouseNumber : " + data[objectName + ".housenumber"]);
+
+                detailText.text = strbui.ToString();
             }
         }
     }
@@ -83,18 +97,23 @@ public class Visualize : MonoBehaviour {
         return orthogonal;
     }
 
+    private Dictionary<string, string> GetData(int index)
+    {
+        return GameObject.Find("CSV").GetComponent<CSVData>().getRowData(index);
+    }
+
     private void setVisualize(int index)
     {
         if (index >= 0 && index < GameObject.Find("CSV").GetComponent<CSVData>().getDataSize())
         {
-            setUI(index);
-            setAllPlanets(index);
+            data = GetData(index);
+            setUI();
+            setAllPlanets();
         }
     }
 
-    private void setUI(int index)
+    private void setUI()
     {
-        var data = GameObject.Find("CSV").GetComponent<CSVData>().getRowData(index);
         string[] olgTime = data["earthquake.time"].Replace('-', '/').Split('T');
         time.text = "Time : " + olgTime[0] + " " + olgTime[1];
 
@@ -103,10 +122,9 @@ public class Visualize : MonoBehaviour {
         magBack.material.color = Color.HSVToRGB(Mathf.Clamp01(float.Parse(data["earthquake.mag"]) * 0.1f + 0.1f), 1.0f, 0.6f);
     }
 
-    private void setAllPlanets(int index)
+    private void setAllPlanets()
     {
         const float resizeHight = 5.0f; 
-        var data = GameObject.Find("CSV").GetComponent<CSVData>().getRowData(index);
 
         GameObject obj = GameObject.Find("Sun").gameObject;
         obj.transform.position = defaultPotision[0] + new Vector3(0, float.Parse(data["Sun.height"]) / resizeHight, 0);
