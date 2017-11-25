@@ -16,6 +16,9 @@ public class Visualize : MonoBehaviour {
     private List<Vector3> defaultPotision = new List<Vector3>();
     private Dictionary<string, string> data;
 
+    public GameObject circle1, circle2;
+    private string[] selectedPlanet = new string[2] {"Earth", "Earth" };
+
     // Use this for initialization
     void Start () {
         defaultPotision.Add(GameObject.Find("Sun").gameObject.transform.position);
@@ -47,7 +50,6 @@ public class Visualize : MonoBehaviour {
         {
             string objectName = hit.collider.gameObject.name;
             
-
             strbui.AppendLine(objectName);
             strbui.AppendLine("Longitude : " + data[objectName + ".longitude"]);
             strbui.AppendLine("Latitude  : " + data[objectName + ".latitude"]);
@@ -59,35 +61,49 @@ public class Visualize : MonoBehaviour {
             strbui.AppendLine("House   : " + data[objectName + ".house"]);
             strbui.AppendLine("HouseNumber : " + data[objectName + ".housenumber"]);
 
-            
+            if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
+            {
+                selectedPlanet[0] = objectName;
+                circle1.gameObject.transform.position = hit.collider.gameObject.transform.position;
+                detailText1.text = strbui.ToString();
+            }
+            else if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
+            {
+                selectedPlanet[1] = objectName;
+                circle2.gameObject.transform.position = hit.collider.gameObject.transform.position;
+                detailText2.text = strbui.ToString();
+            }
         }
 
-        if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
-        {
-            detailText1.text = strbui.ToString();
-        }
-        else if(Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
-        {
-            detailText2.text = strbui.ToString();
-        }
+        
     }
 
     private void SelectData()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
-            setVisualize(index++);
+        {
+            index++;
+            if (index > 3645)
+                index = 3645;
+
+            slider.value = index;
+            setVisualize(index);
+        }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             index--;
             if (index < 0)
                 index = 0;
+
+            slider.value = index;
             setVisualize(index);
         }
     }
 
     public void setsetVisualizeFromSlider()
     {
-        setVisualize((int)slider.value);
+        index = (int)slider.value;
+        setVisualize(index);
     }
 
     //極座標系から直交座標系へ変換
@@ -123,7 +139,7 @@ public class Visualize : MonoBehaviour {
         string[] olgTime = data["earthquake.time"].Replace('-', '/').Split('T');
         time.text = "Time : " + olgTime[0] + " " + olgTime[1];
 
-        magText.text = data["earthquake.mag"];
+        magText.text = "M" + data["earthquake.mag"];
         Renderer magBack = GameObject.Find("MagBack").GetComponent<Renderer>();
         magBack.material.color = Color.HSVToRGB(Mathf.Clamp01(float.Parse(data["earthquake.mag"]) * 0.1f + 0.1f), 1.0f, 0.6f);
     }
@@ -191,5 +207,8 @@ public class Visualize : MonoBehaviour {
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Pluto.azimuth"]));
         obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
         obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
+
+        circle1.gameObject.transform.position = GameObject.Find(selectedPlanet[0]).gameObject.transform.position;
+        circle2.gameObject.transform.position = GameObject.Find(selectedPlanet[1]).gameObject.transform.position;
     }
 }
