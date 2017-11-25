@@ -83,60 +83,67 @@ public class Visualize : MonoBehaviour {
 
     private void setAllPlanets(int index)
     {
-        const float resizeHight = 10.0f; 
+        const float resizeHight = 5.0f; 
         var data = GameObject.Find("CSV").GetComponent<CSVData>().getRowData(index);
 
         GameObject obj = GameObject.Find("Sun").gameObject;
         obj.transform.position = defaultPotision[0] + new Vector3(0, float.Parse(data["Sun.height"]) / resizeHight, 0);
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Sun.azimuth"]));
+        obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
+        obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
+
         obj = GameObject.Find("Mercury").gameObject;
         obj.transform.position = defaultPotision[1] + new Vector3(0, float.Parse(data["Mercury.height"]) / resizeHight, 0);
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Mercury.azimuth"]));
+        obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
+        obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
+
         obj = GameObject.Find("Venus").gameObject;
         obj.transform.position = defaultPotision[2] + new Vector3(0, float.Parse(data["Venus.height"]) / resizeHight, 0);
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Venus.azimuth"]));
+        obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
+        obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
+
         obj = GameObject.Find("Moon").gameObject;
         obj.transform.position = defaultPotision[3] + new Vector3(0, float.Parse(data["Moon.height"]) / resizeHight, 0);
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Moon.azimuth"]));
+        obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
+        obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
+
         obj = GameObject.Find("Mars").gameObject;
         obj.transform.position = defaultPotision[4] + new Vector3(0, float.Parse(data["Mars.height"]) / resizeHight, 0);
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Mars.azimuth"]));
+        obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
+        obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
+
         obj = GameObject.Find("Jupiter").gameObject;
         obj.transform.position = defaultPotision[5] + new Vector3(0, float.Parse(data["Jupiter.height"]) / resizeHight, 0);
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Jupiter.azimuth"]));
+        obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
+        obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
+
         obj = GameObject.Find("Saturn").gameObject;
         obj.transform.position = defaultPotision[6] + new Vector3(0, float.Parse(data["Saturn.height"]) / resizeHight, 0);
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Saturn.azimuth"]));
+        obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
+        obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
+
         obj = GameObject.Find("Uranus").gameObject;
         obj.transform.position = defaultPotision[7] + new Vector3(0, float.Parse(data["Uranus.height"]) / resizeHight, 0);
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Uranus.azimuth"]));
+        obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
+        obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
+
         obj = GameObject.Find("Neptune").gameObject;
         obj.transform.position = defaultPotision[8] + new Vector3(0, float.Parse(data["Neptune.height"]) / resizeHight, 0);
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Neptune.azimuth"]));
+        obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
+        obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
+
         obj = GameObject.Find("Pluto").gameObject;
         obj.transform.position = defaultPotision[9] + new Vector3(0, float.Parse(data["Pluto.height"]) / resizeHight, 0);
         obj.transform.RotateAround(GameObject.Find("Earth").gameObject.transform.position, new Vector3(0, -1, 0), float.Parse(data["Pluto.azimuth"]));
-        /*
-        obj.transform.position = (Polar2Orthogonal(float.Parse(data["Mercury.declination"]), float.Parse(data["Mercury.rectascension"])) - sunPosition) * 16;
-        obj = GameObject.Find("Venus").gameObject;
-        obj.transform.position = (Polar2Orthogonal(float.Parse(data["Venus.declination"]), float.Parse(data["Venus.rectascension"])) - sunPosition) * 32;
-        obj = GameObject.Find("Earth").gameObject;
-        obj.transform.position =  sunPosition * 32;
-        obj = GameObject.Find("Moon").gameObject;
-        obj.transform.position = (Polar2Orthogonal(float.Parse(data["Moon.declination"]), float.Parse(data["Moon.rectascension"])) - sunPosition) * 50;
-        obj = GameObject.Find("Mars").gameObject;
-        obj.transform.position = (Polar2Orthogonal(float.Parse(data["Mars.declination"]), float.Parse(data["Mars.rectascension"])) - sunPosition) * 54;
-        obj = GameObject.Find("Jupiter").gameObject;
-        obj.transform.position = (Polar2Orthogonal(float.Parse(data["Jupiter.declination"]), float.Parse(data["Jupiter.rectascension"])) - sunPosition) * 70;
-        obj = GameObject.Find("Saturn").gameObject;
-        obj.transform.position = (Polar2Orthogonal(float.Parse(data["Saturn.declination"]), float.Parse(data["Saturn.rectascension"])) - sunPosition) * 86;
-        obj = GameObject.Find("Uranus").gameObject;
-        obj.transform.position = (Polar2Orthogonal(float.Parse(data["Uranus.declination"]), float.Parse(data["Uranus.rectascension"])) - sunPosition) * 102;
-        obj = GameObject.Find("Neptune").gameObject;
-        obj.transform.position = (Polar2Orthogonal(float.Parse(data["Neptune.declination"]), float.Parse(data["Neptune.rectascension"])) - sunPosition) * 118;
-        obj = GameObject.Find("Pluto").gameObject;
-        obj.transform.position = (Polar2Orthogonal(float.Parse(data["Pluto.declination"]), float.Parse(data["Pluto.rectascension"])) - sunPosition) * 134;
-        */
-
+        obj.GetComponent<LineRenderer>().SetPosition(0, obj.transform.position);
+        obj.GetComponent<LineRenderer>().SetPosition(1, new Vector3(obj.transform.position.x, 0, obj.transform.position.z));
     }
 }
