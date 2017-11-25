@@ -10,7 +10,7 @@ public class Visualize : MonoBehaviour {
     public Text magText;
     public Slider slider;
 
-    public Text detailText;
+    public Text detailText1, detailText2;
     int index = 0;
 
     private List<Vector3> defaultPotision = new List<Vector3>();
@@ -40,29 +40,35 @@ public class Visualize : MonoBehaviour {
 
     private void SetPlanetDetail()
     {
-        if (Input.GetMouseButtonDown(0))
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit = new RaycastHit();
+        StringBuilder strbui = new StringBuilder();
+        if (Physics.Raycast(ray, out hit, 1000))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit = new RaycastHit();
+            string objectName = hit.collider.gameObject.name;
+            
 
-            if (Physics.Raycast(ray, out hit, 1000))
-            {
-                string objectName = hit.collider.gameObject.name;
-                StringBuilder strbui = new StringBuilder();
+            strbui.AppendLine(objectName);
+            strbui.AppendLine("Longitude : " + data[objectName + ".longitude"]);
+            strbui.AppendLine("Latitude  : " + data[objectName + ".latitude"]);
+            strbui.AppendLine("Rectascension : " + data[objectName + ".rectascension"]);
+            strbui.AppendLine("Declination : " + data[objectName + ".declination"]);
+            strbui.AppendLine("Azimuth : " + data[objectName + ".azimuth"]);
+            strbui.AppendLine("Height  : " + data[objectName + ".height"]);
+            strbui.AppendLine("Speed   : " + data[objectName + ".speed"]);
+            strbui.AppendLine("House   : " + data[objectName + ".house"]);
+            strbui.AppendLine("HouseNumber : " + data[objectName + ".housenumber"]);
 
-                strbui.AppendLine(objectName);
-                strbui.AppendLine("Longitude : " + data[objectName + ".longitude"]);
-                strbui.AppendLine("Latitude  : " + data[objectName + ".latitude"]);
-                strbui.AppendLine("Rectascension : " + data[objectName + ".rectascension"]);
-                strbui.AppendLine("Declination : " + data[objectName + ".declination"]);
-                strbui.AppendLine("Azimuth : " + data[objectName + ".azimuth"]);
-                strbui.AppendLine("Height  : " + data[objectName + ".height"]);
-                strbui.AppendLine("Speed   : " + data[objectName + ".speed"]);
-                strbui.AppendLine("House   : " + data[objectName + ".house"]);
-                strbui.AppendLine("HouseNumber : " + data[objectName + ".housenumber"]);
+            
+        }
 
-                detailText.text = strbui.ToString();
-            }
+        if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
+        {
+            detailText1.text = strbui.ToString();
+        }
+        else if(Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
+        {
+            detailText2.text = strbui.ToString();
         }
     }
 
