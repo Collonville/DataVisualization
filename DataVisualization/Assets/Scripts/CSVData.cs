@@ -18,14 +18,7 @@ public class CSVData : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-       
 
-        /*
-        for(int i = 0; i < data.Keys.Count; i++)
-        {
-            var da = data.ElementAt(i).Value;
-            Debug.Log(da["earthquake.mag"]);
-        }*/
     }
 	
 	// Update is called once per frame
@@ -75,5 +68,10 @@ public class CSVData : MonoBehaviour {
     public Dictionary<string, string> getRowData(int index)
     {
         return data[index];
+    }
+
+    public int getDataSize()
+    {
+        return data.Count;
     }
 }
