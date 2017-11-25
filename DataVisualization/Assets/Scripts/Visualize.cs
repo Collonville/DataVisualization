@@ -143,8 +143,8 @@ public class Visualize : MonoBehaviour {
         place.text = data["earthquake.place"];
 
         magText.text = "M" + data["earthquake.mag"];
-        Renderer magBack = GameObject.Find("MagBack").GetComponent<Renderer>();
-        magBack.material.color = Color.HSVToRGB(Mathf.Clamp01(float.Parse(data["earthquake.mag"]) * 0.1f + 0.1f), 1.0f, 0.6f);
+        Image magBack = GameObject.Find("MagBack").GetComponent<Image>();
+        magBack.color = Color.HSVToRGB(Mathf.Clamp01(float.Parse(data["earthquake.mag"]) * 0.1f + 0.1f), 1.0f, 0.8f);
 
         StringBuilder strbui = new StringBuilder();
         strbui.AppendLine("Earthquake Detail");
